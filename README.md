@@ -1,4 +1,6 @@
 # Explanation of the Script
+This script automates the process of detecting and blocking IP addresses attempting brute-force SSH logins on a Debian-based system. It monitors the /var/log/auth.log file for failed SSH login attempts, extracts the IP address of the attacker, and blocks it using iptables. The script is written to a file and made executable. Additionally, it sets up a systemd service that ensures the script runs continuously in the background, automatically starting on system boot. Once set up, the service actively monitors for brute-force attacks and blocks malicious IPs in real-time without requiring any user interaction.
+
 block_ip() function: Blocks the IP address using iptables when it is detected as attempting a brute-force attack.
 Monitoring auth.log: The script uses tail -F to follow the SSH log file (/var/log/auth.log) in real-time. It checks for lines containing "Failed password" (indicating a failed login attempt).
 Extracting and blocking IPs: If a failed login attempt is found, it extracts the IP address using grep and awk and calls the block_ip() function to block it.
