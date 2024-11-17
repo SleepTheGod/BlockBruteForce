@@ -22,3 +22,5 @@ Set up the SSH brute-force detection and blocking mechanism.
 Run as a background service, automatically blocking IPs attempting brute-force SSH login attempts.
 Print "Made by Taylor Christian Newsome" when the script is executed.
 The script is fully automated and does not require any user edits. It handles everything, including logging the blocked IPs and printing the desired message.
+
+NOTE : For all other users not running debian run block.sh
