@@ -11,6 +11,8 @@ Service status check: Finally, it checks if the service is running properly.
 Save the above script to a file (e.g., setup_brute_blocker.sh).
 Run the script with root privileges
 ```bash
+mkdir /var/log/auth.log
+chmod +x main.sh
 sudo bash main.sh
 ```
 Once the script runs, it will
